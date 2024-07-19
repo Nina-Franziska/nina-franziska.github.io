@@ -1,0 +1,353 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: against;
+  src: url(Fonts/against/against\ regular.otf);
+}
+
+.nanum-myeongjo-regular {
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-garamond-light {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cabin-normal {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.jost-normal {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  /*font-size: 24px;*/
+  font-size: 0.85vmax;
+  /*font-family: 'Bitter', serif;*/
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  /* line-height: 1.2; */
+  /* max-width: 84vw; */
+
+  max-width: 100vw;
+  min-height: 100vh;
+
+  opacity: 1;
+  transition: opacity 400ms;
+  /* cursor: url(/Images/Cursor-evenSmallerMasked.png), default; */
+}
+
+header {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem 0rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  /*font-size: 2rem;*/
+  font-size: 2.25vmax;
+  font-weight: 300;
+  line-height: 2.5rem;
+}
+
+.hide {
+  opacity: 0;
+}
+
+h1#logo {
+  font-family: "against";
+}
+
+h2 {
+  padding-bottom: 2rem;
+  font-size: 1.25vmax;
+}
+
+p {
+  font-weight: 300;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  /* cursor: url(/Images/CursorPointer-new2.png), pointer; */
+}
+
+nav > a {
+  color: currentColor;
+  text-underline-offset: 2px;
+  text-decoration: underline;
+}
+
+/* .line {
+
+} */
+
+.line img {
+  width: 0.5vw;
+  height: 90vh;
+}
+
+section.container {
+  display: grid;
+  grid-template-columns: 4fr 0.75fr 6fr;
+  margin: 1.25rem;  /* defines the margin of the whole page except for header */
+
+  max-height: 100vh;
+  height: 85vh;
+}
+
+section.left p.vision {
+  font-size: 1.25rem;
+  text-align: justify;
+  /* padding-top: 20%; */
+}
+
+section.left {
+  /* margin: 1rem; */
+  padding-right: 3.3rem;
+}
+
+/* section.left div{
+    margin-bottom: 2rem;
+} */
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+  width: 40vw;
+  background-color: transparent;
+}
+
+footer a {
+  display: grid;
+  /* grid-template-rows: auto 1fr auto;  */
+}
+
+section.rightLanding {
+  display: grid;
+  justify-content: space-between;
+  /* grid-template-columns: repeat(6, 1fr); */
+  /* grid-template-columns: 4fr 3fr 2fr 2fr 0fr 0fr 0fr 0fr; */
+  grid-template-columns: 4fr 6fr 3fr 2fr 0fr 0fr 0fr 0fr 0fr 0fr; 
+  /* gap: 1rem; /*set this to zero and style the rest to look like there is a cap*/
+  cursor: url(Images/e-resizeCursorMasked.png), e-resize;
+  /* padding:  1rem 1rem; /* same here*/
+  padding: 1rem 0.5rem; /*changed to fit the slide overflow system*/
+  line-height: 1.2;
+  height: 100%;
+
+  transition: grid-template-columns 314ms;
+}
+
+div.projectInfoFigures {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  /* padding: 1.34rem 0rem 1.34rem 0rem */
+}
+
+.figuresBottomPadding {
+  padding-bottom: 1.34rem;
+}
+
+.figuresPadding {
+  padding: 1.34rem 0rem 1.34rem 0rem;
+}
+
+section.rightProjectInfo {
+  /* padding-left: 7rem; */
+  /* padding-left: 13%; */
+
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+section.rightProjectInfo .largeInitialPhoto {
+  width: 100%;
+}
+
+
+section.rightProjectInfo .largeInitialVideoLandscape {
+  max-width: 80%;
+}
+
+section.rightProjectInfo .largeFinalPhoto {
+  width: 100%;
+}
+
+section.rightProjectInfo .largeFinalSquarePhotos img {
+  /* aspect-ratio: 4/3;
+  object-fit: cover;
+  max-width: 100%; */
+
+    max-width: 49%;
+}
+
+
+
+section.rightProjectInfo .largeFinalPhoto img {
+  max-width: 100%;
+}
+
+section.rightProjectInfo .largeInitialPhoto img {
+  max-width: 50%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+section.rightProjectInfo .largeInitialPhoto iframe {
+  max-width: 50%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  height: 60vh;
+  width: 30vw;
+}
+
+div.projectInfoFigures img {
+  max-width: 100%;
+  aspect-ratio: 4/6;
+  object-fit: cover;
+}
+
+section.rightLanding div {
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 400ms;
+  /* background-color: bisque; */
+}
+
+section.rightLanding img {
+  /*max-width: 100%*/
+  max-width: 100%;
+  aspect-ratio: 4/6;
+  /*     aspect-ratio: 4/5; */
+  object-fit: cover;
+  /*max-height: 80vh;*/
+}
+
+figure,
+figcaption {
+  width: 100%;
+
+  padding: 0 0.5rem; /*changed to fit the slide overflow system*/
+}
+
+figcaption {
+  max-width: 10rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.projectInfoHeader {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (width <= 600px) and (orientation: portrait) {
+  html,
+  body {
+    /*font-size: 24px;*/
+    font-size: 1.5vmax;
+  }
+
+  h1 {
+    /*font-size: 2rem;*/
+    font-size: 3vmax;
+    font-weight: 300;
+  }
+
+  section.container {
+    grid-template-columns: auto auto;
+    height: auto;
+    /* max-height: 10vh; */
+    /* height: 15vh; */
+    /* grid-template-rows: auto auto; */
+  }
+
+  section.left {
+    padding-bottom: 4vh;
+  }
+
+  section.rightLanding {
+    padding-bottom: 40vh;
+  }
+
+  /* footer a {
+        display:contents;
+  } */
+
+  /* footer {
+    padding-top: .5rem;
+    padding-bottom: 1.5rem;
+    background-color: white;
+
+  } */
+
+  div.websiteBy {
+    text-align: right;
+  }
+
+
+
+
+
+  /* .line img {
+
+    width: 0.5vw;
+    height: auto;
+} */
+}
