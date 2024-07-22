@@ -1,4 +1,10 @@
 $(document).ready(function () {
+
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+
   const landingLink = "Sub-Pages/ProjectCarousel.html";
 
   // Initial page load effects
