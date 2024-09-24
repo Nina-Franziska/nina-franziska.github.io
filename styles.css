@@ -181,7 +181,7 @@ footer a {
 section.rightLanding {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 4fr 6fr 3fr 2fr 0fr 0fr 0fr 0fr 0fr 0fr; 
+  grid-template-columns: 4fr 6fr 3fr 2fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr; 
   /* gap: 1rem; /*set this to zero and style the rest to look like there is a cap*/
   cursor: url(Images/e-resizeCursorMasked.png), e-resize;
   /* padding:  1rem 1rem; /* same here*/

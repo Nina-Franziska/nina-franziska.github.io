@@ -51,9 +51,8 @@ $(document).ready(function () {
       blackQueen: "Sub-Pages/ProjectDescriptions/ProjectInfo_blackQueen.html",
       vsr:  "Sub-Pages/ProjectDescriptions/ProjectInfo_VSR.html",
       sostr: "Sub-Pages/ProjectDescriptions/ProjectInfo_SØSTR.html",
-      syntheticUtopia:
-        "Sub-Pages/ProjectDescriptions/ProjectInfo_SyntheticUtopia.html",
-        // "Sub-Pages/projectInfo.html",
+      glas: "Sub-Pages/ProjectDescriptions/ProjectInfo_Glas.html",
+      syntheticUtopia: "Sub-Pages/ProjectDescriptions/ProjectInfo_SyntheticUtopia.html",
       emptyMind: "Sub-Pages/ProjectDescriptions/ProjectInfo_EmptyMind.html",
 
       default: "Sub-Pages/projectInfo.html",
