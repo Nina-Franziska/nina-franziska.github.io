@@ -211,8 +211,8 @@ function isTouchDevice() {
       timer = window.setInterval(nextSlide, 4500);
       if (isTouchDevice()) {
         // Disable click events and enable touch events for carousel
-        section.addEventListener("touchmove", nextSlide);
-        section.removeEventListener("click", nextSlide); // Optional: Remove click if needed
+        section.addEventListener("touchstart", nextSlide);
+       // section.removeEventListener("click", nextSlide); // Optional: Remove click if needed
       } else {
         // Enable click events for non-touch devices
         section.addEventListener("click", nextSlide);
