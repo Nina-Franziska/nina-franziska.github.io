@@ -159,13 +159,19 @@ section.left {
 footer {
   position: fixed;
   bottom: 1rem;
-  width: 40vw;
+  /* width: 40vw; */
+  width: 97vw;
   background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
 }
 
-footer a {
+footer div a {
   display: grid;
 }
+
 
 section.rightLanding {
   display: grid;
@@ -204,7 +210,7 @@ section.rightProjectInfo {
   transition: opacity 400ms;
 }
 
-section.rightProjectInfo .largeInitialPhoto {
+ßrightProjectInfo .largeInitialPhoto {
   width: 100%;
 }
 
@@ -227,17 +233,17 @@ section.rightProjectInfo .largeFinalSquarePhotos img {
 
 
 
-section.rightProjectInfo .largeFinalPhoto img {
+.largeFinalPhoto img {
   max-width: 100%;
 }
 
-section.rightProjectInfo .largeInitialPhoto img {
+.largeInitialPhoto img {
   max-width: 50%;
   aspect-ratio: 3/4;
   object-fit: cover;
 }
 
-section.rightProjectInfo .largeInitialPhoto iframe {
+.largeInitialPhoto iframe {
   max-width: 50%;
   aspect-ratio: 3/4;
   object-fit: cover;

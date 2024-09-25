@@ -1,0 +1,60 @@
+    
+<div>
+    <h1 class="cormorant-garamond-light projectInfoHeader">
+    Nina-Franziska Christiansen
+  </h1>
+
+  <div class = 'largeInitialPhoto figuresBottomPadding'>
+    <figure>
+       
+        <img src = "https://lh3.googleusercontent.com/d/1mNi6mdXRup7vezWt0Qr88KR0N_eWka8a">
+    </figure>
+    <figcaption>photograph taken by <a href= "https://francescodipierro.com/">Francesco Dipierro</a></figcaption>
+    
+    </div>
+
+  <h2 class="cormorant-garamond-light one-liner">
+    <!-- Nina-Franziska began her career by creating an interactive actor for the theatre play The Black Queen in Miami Florida together with three other talanted designers and programmers. 
+    Four years later,  -->
+    Nina-Franziska is one of the most prominent XR creators in the Danish art and design scene. 
+    Her VR works arised from her struggles with chronic pain as the way her body has come to release stress, leading her on the journey of researching how recent studies on how the neuroplasticity of psilocybin therapy aids people with treatment-resistant depression.
+    This began her journey of creating XR experiences that can have similar effects on the brain, releasing bodily tension while becoming a stepping stone for change in subconscious habitual behaviour. <br> <br>
+
+    Simoultaneously, Nina-Franziska co-founded <i><a href = "https://www.instagram.com/uberort.studio/">Uberørt</a></i> with fellow creative technologist and long time collaborator Louise Lessél, and is now creating the future of concert experiences, working with prominent musicians such as Sharin Foo, Louise Foo, Lisbet Fritze and Kirstine Stubbe Teglbjærg.
+  </h2>
+
+  <p>   <b>Technologies and Softwares</b> <br />
+    Programming: C#, Javascript, Python <br>
+    XR: Unity and Touchdesigner <br />
+    3D: Blender <br />
+    Motion tracking/capture: Kinect and Rococo <br>
+    Physical computing and prototyping: Arduino, 3D printing<br />
+    Web: Three.js, HTML, CSS <br>
+    Networking: OSC<br>
+    Sound: Logic <br>
+    My new generative friends: ChatGPT, Krea.ai and Midjourney <br>
+    <br />
+
+    <!-- <b>Experience</b> <br />
+    Lead Creative Technologist and Co-founder, Uberørt Studios, 2022 - now <br>
+    Academic Employee and Research Assistant, Royal Danish Academy, 2022 - now <br />
+    Teaching Installation Design, Royal Danish Academy, 2021<br>
+    Digital Designer, Kvalifik, 2018 - 2019 <br />
+    <br /> <br> -->
+
+    <b>Education</b> <br />
+    M. Design Visual Game and Media Design, Royal Danish Academy, Copenhagen.<br>
+    Exchange: Design and Narrative Media, Die Angewandte, Vienna. 
+    B. Sc. Medialogy, Aalborh University, Copenhagen <br /> <br /> 
+
+    <b>Exhibtions</b> <br />
+    <!-- Upocming: Waves of Convergenve VR experience, Dreaming of Ocean 2024: Sunrise of the Sea, Nordic Contemporary Art Center, November 2024, Xiamen, China <br> -->
+    Glas and Uberørt (interactive installation), Vega Lab, May 16th - May 26th, 2024, Copenhagen.<br />
+    Virtual Scenario Responder (VR), UIA World Congress of Architects, June 2024, Copenhagen. <br>
+    Silence of a Resonating Mind (VR), New Design & Architecture, The Royal Danish Academy, Summer 2023, Copenhagen.
+    Virtual Scenario Responder (VR), Afærd / Velfærd, The Royal Danish Academy, January - March 2023, Copenhagen. <br>
+    SØSTR and Uberørt (immersive installation), Vega Lab, October 22nd - November 2nd, 20222, Copenhagen.<br>
+    Resonance (VR), Die Angewandte Festival, June 2021, Vienna.
+  </p>
+</b> <br />
+</div>

@@ -25,6 +25,7 @@ $(document).ready(function () {
       .load(link, function () {
         $(this).fadeIn(600);
         ProjectInfo();
+        AboutInfo();
         Carousel();
       });
   }
@@ -44,8 +45,30 @@ $(document).ready(function () {
     });
   }
 
+  function AboutInfo(){
+    $("#about").click( function (event) {
+      const idLink = event.target.id;
+      if (idLink) {
+        const loadFile = injectLinkData(idLink);
+        $(".rightContainer")
+          .hide()
+          .load(loadFile, function () {
+            $(this).fadeIn(600);
+            $(".line").css("cursor", "pointer");
+          });
+      }
+
+
+
+    });
+  }
+
   function injectLinkData(dataId) {
-    const dataMapping = {
+    
+
+    let dataMapping = {
+      about: "Sub-Pages/PortfolioAbout",
+
       resonance: "Sub-Pages/ProjectDescriptions/ProjectInfo_Resonance.html",
       silenceOf: "Sub-Pages/ProjectDescriptions/ProjectInfo_SilenceOf.html",
       sitrekin: "Sub-Pages/ProjectDescriptions/ProjectInfo_Sitrekin.html",
@@ -58,7 +81,18 @@ $(document).ready(function () {
 
       default: "Sub-Pages/projectInfo.html",
     };
-    const key = dataId.replace("-link", "");
+    let key;
+    if (dataId.includes('-link')) {
+      console.log(dataId);
+      console.log("The id contains '-link'");
+      key = dataId.replace("-link", "");
+    } else {
+      console.log("The id does not contain '-link'");
+      key = dataId;
+    }
+    //let key = dataId.replace("-link", "");
+    
+
     return dataMapping[key] || dataMapping["default"];
   }
 
@@ -112,7 +146,7 @@ $(document).ready(function () {
   
 
 
- 
+    let timer;
 
     let nextSlide = () => {
       if(currentIndex < slides.length-4){
@@ -150,7 +184,7 @@ $(document).ready(function () {
       section.addEventListener("click", nextSlide);
       // section.addEventListener("touch", nextSlide);
       section.addEventListener("touchmove", nextSlide);
-      let timer = window.setInterval(nextSlide, 4500);
+      timer = window.setInterval(nextSlide, 4500);
 
 
     }
