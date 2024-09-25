@@ -1,11 +1,12 @@
 $(document).ready(function () {
 
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
+//   document.addEventListener('contextmenu', function(e) {
+//     e.preventDefault();
+// });
 
 
   const landingLink = "Sub-Pages/ProjectCarousel.html";
+
 
   // Initial page load effects
   $("body").hide().fadeIn(400);
@@ -103,8 +104,8 @@ $(document).ready(function () {
     var section = document.querySelector(".rightLanding");
     var slides = section.querySelectorAll("div");
     const carouselPattern = MakePattern(slides,visibleItemsPattern);
-    console.log(visibleItemsPattern);
-    console.log(carouselPattern);
+   // console.log(visibleItemsPattern);
+   //console.log(carouselPattern);
     //const visibleItems = visibleItemsPattern.length;
 
     let modifiedPattern = carouselPattern.slice()
@@ -117,6 +118,7 @@ $(document).ready(function () {
       if(currentIndex < slides.length-4){
 
 
+
           shiftArrayRight(modifiedPattern);
           //console.log(carouselPattern);
 
@@ -125,31 +127,34 @@ $(document).ready(function () {
       } else{
          modifiedPattern = carouselPattern.slice();
          currentIndex = 0;
-        // console.log(carouselPattern);
       }
 
       
 
       
-      //shiftArrayRight(pattern3);
+
       patternMapped = modifiedPattern
         .map((p) => {
           return `${p}fr`;
         })
         .join(" ");
 
-     // clearTimeout(timeOut);
-    //  timeOut = setTimeout(nextSlide, 4000);
 
+
+      clearInterval(timer);
       section.style.gridTemplateColumns = patternMapped;
-      //console.log(patternMapped);
+
     };
 
     if (section != null) {
       section.addEventListener("click", nextSlide);
       // section.addEventListener("touch", nextSlide);
       section.addEventListener("touchmove", nextSlide);
-    //  timeOut = setTimeout(nextSlide, 4000);
+      let timer = window.setInterval(nextSlide, 4500);
+
+
     }
+
+
   }
 });
