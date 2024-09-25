@@ -4,7 +4,19 @@ $(document).ready(function () {
 //     e.preventDefault();
 // });
 
+function isTouchDevice() {
+  return (
+    'ontouchstart' in window ||    // Check if touch events are supported
+    navigator.maxTouchPoints > 0 ||  // For modern devices (touch screens, tablets, etc.)
+    navigator.msMaxTouchPoints > 0   // For older Microsoft devices
+  );
+}
 
+// if (isTouchDevice()) {
+//   console.log("Touch device detected.");
+// } else {
+//   console.log("Non-touch device detected.");
+// }
   const landingLink = "Sub-Pages/ProjectCarousel.html";
 
 
@@ -14,12 +26,20 @@ $(document).ready(function () {
 
   // Logo and line click handler
   $("#logo, .line").on("click", function () {
+    console.log("klik"),
+    loadPageContent(landingLink);
+    $(".line").css("cursor", "default");
+  });
+
+  $(document).on("click", "#back", function () {
+    console.log("klik"),
     loadPageContent(landingLink);
     $(".line").css("cursor", "default");
   });
 
   // Load content and initialize ProjectInfo and Carousel
   function loadPageContent(link) {
+    //$("#back").remove();
     $(".rightContainer")
       .hide()
       .load(link, function () {
@@ -28,6 +48,9 @@ $(document).ready(function () {
         AboutInfo();
         Carousel();
       });
+ 
+     
+      // <h3 class = "cormorant-garamond-light one-liner">BACK</h3>
   }
 
   function ProjectInfo() {
@@ -39,10 +62,20 @@ $(document).ready(function () {
           .hide()
           .load(loadFile, function () {
             $(this).fadeIn(600);
+            PrependElement("<a href ='#' id = 'back'><h3 class = 'cormorant-garamond-light' >BACK</h3></a>");
             $(".line").css("cursor", "pointer");
+
           });
+         
       }
     });
+  }
+
+  function PrependElement(element){
+
+    $(".rightContainer").prepend(element);
+
+
   }
 
   function AboutInfo(){
@@ -54,9 +87,12 @@ $(document).ready(function () {
           .hide()
           .load(loadFile, function () {
             $(this).fadeIn(600);
+            PrependElement("<a href =#' id = 'back'>BACK</a>");
             $(".line").css("cursor", "pointer");
           });
       }
+
+
 
 
 
@@ -83,24 +119,15 @@ $(document).ready(function () {
     };
     let key;
     if (dataId.includes('-link')) {
-      console.log(dataId);
-      console.log("The id contains '-link'");
       key = dataId.replace("-link", "");
     } else {
-      console.log("The id does not contain '-link'");
       key = dataId;
     }
-    //let key = dataId.replace("-link", "");
     
 
     return dataMapping[key] || dataMapping["default"];
   }
 
-  // function getRandomInt(min, max) {
-  //   const minCeiled = Math.ceil(min);
-  //   const maxFloored = Math.floor(max);
-  //   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
-  // }
 
 
   let currentIndex = localStorage.getItem("carouselIndex") || 0;
@@ -181,10 +208,20 @@ $(document).ready(function () {
     };
 
     if (section != null) {
-      section.addEventListener("click", nextSlide);
-      // section.addEventListener("touch", nextSlide);
-      section.addEventListener("touchmove", nextSlide);
       timer = window.setInterval(nextSlide, 4500);
+      if (isTouchDevice()) {
+        // Disable click events and enable touch events for carousel
+        section.addEventListener("touchmove", nextSlide);
+        section.removeEventListener("click", nextSlide); // Optional: Remove click if needed
+      } else {
+        // Enable click events for non-touch devices
+        section.addEventListener("click", nextSlide);
+      }
+
+      // section.addEventListener("click", nextSlide);
+      // // section.addEventListener("touch", nextSlide);
+      // section.addEventListener("touchmove", nextSlide);
+      // timer = window.setInterval(nextSlide, 4500);
 
 
     }
