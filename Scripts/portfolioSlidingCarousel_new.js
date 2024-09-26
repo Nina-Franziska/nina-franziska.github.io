@@ -107,14 +107,14 @@ function LoadRightContainer(pageId){
 
   function PrependElement(element){
 
-    $(".rightContainer").prepend(element);
+    $(".rightProjectInfo").prepend(element);
 
 
   }
 
   function AppendElement(element){
 
-    $(".rightContainer").append(element);
+    $(".rightProjectInfo").append(element);
 
 
   }
