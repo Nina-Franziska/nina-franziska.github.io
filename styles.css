@@ -100,6 +100,7 @@ h1 {
 
 h1#logo {
   font-family: "against";
+  cursor:pointer;
 }
 
 h2 {
@@ -111,7 +112,7 @@ a > h3 {
 
   text-underline-offset: 2px;
   text-decoration: underline;
-  
+
 }
 
 p {
@@ -160,11 +161,12 @@ section.container {
   height: 85vh;
 }
 
-section.rightContainer {
+/* section.rightContainer {
   padding-bottom: 9%;
 
+} */
 
-}
+
 section.left p.vision {
   font-size: 1.25rem;
   text-align: justify;
@@ -185,7 +187,7 @@ footer {
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
   align-items: end;
-  background-color: white;
+  /* background-color: white; */
 }
 
 footer div a {
@@ -196,7 +198,7 @@ footer div a {
 section.rightLanding {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 4fr 6fr 3fr 2fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr; 
+  grid-template-columns: 4fr 6fr 3fr 2fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr;
   /* gap: 1rem; /*set this to zero and style the rest to look like there is a cap*/
   cursor: e-resize;
   /* padding:  1rem 1rem; /* same here*/
@@ -225,6 +227,8 @@ div.projectInfoFigures {
 section.rightProjectInfo {
   /* padding-left: 7rem; */
   /* padding-left: 13%; */
+  padding-bottom: 10%;
+
 
   opacity: 1;
   transition: opacity 400ms;
@@ -358,13 +362,26 @@ figcaption {
 
 
   @media only screen and (max-width: 600px) {
-    section.rightContainer {
+      .rightContainer {
       grid-column-start: 1;
-      padding-bottom: 10%;
-    
-    
+      padding-bottom: 2%;
+
+      
+
+
     }
-    
+
+    .rightProjectInfo {
+      padding-bottom: 10%;
+    }
+
+    footer{
+
+        background-color: white;
+
+
+    }
+
   }
 
 

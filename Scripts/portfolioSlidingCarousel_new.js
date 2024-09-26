@@ -22,51 +22,84 @@ function isTouchDevice() {
 
   // Initial page load effects
   $("body").hide().fadeIn(400);
-  loadPageContent(landingLink);
+  LoadPageContent(landingLink);
+  AboutInfo();
 
   // Logo and line click handler
   $("#logo, .line").on("click", function () {
-    //console.log("klik"),
-    loadPageContent(landingLink);
+    event.preventDefault(); 
+    //preventDefault()
+    LoadPageContent(landingLink);
     $(".line").css("cursor", "default");
   });
 
   $(document).on("click", ".back", function () {
-    loadPageContent(landingLink);
+    event.preventDefault();
+    //preventDefault()
+    LoadPageContent(landingLink);
     $(".line").css("cursor", "default");
+  
   });
 
   // Load content and initialize ProjectInfo and Carousel
-  function loadPageContent(link) {
+
+
+  function LoadPageContent(link) {
+
+    let pageId = "landing";
+
+    
     $(".rightContainer")
       .hide()
       .load(link, function () {
         $(this).fadeIn(600);
         ProjectInfo();
-        AboutInfo();
         Carousel();
+
+        if (history.state && history.state.PageId != pageId){
+          history.pushState({PageId: pageId}, "", `?page=${pageId}`);
+
+        }
+
       });
  
      
-      // <h3 class = "cormorant-garamond-light one-liner">BACK</h3>
   }
 
-let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-bold' >BACK</h3></a>"
 
+
+
+
+let backElement = "<a href ='javascript:void(0)' class = 'back'><h3 class = 'cormorant-garamond-bold' >BACK</h3></a>"
+
+function LoadRightContainer(pageId){
+
+  const loadFile = injectLinkData(pageId);
+  pageId = pageId.replace("-link", ""); 
+  $(".rightContainer")
+    .hide()
+    .load(loadFile, function () {
+      $(this).fadeIn(600);
+      PrependElement(backElement);
+      AppendElement(backElement);
+      $(".line").css("cursor", "pointer");
+      // Push the new state to the browser's history
+      //if (history.state && history.state.PageId != pageId){
+        history.pushState({PageId: pageId}, "", `?page=${pageId}`);
+
+      //}
+
+
+    });
+
+}
   function ProjectInfo() {
     $(".rightLanding").on("click", function (event) {
-      const idLink = event.target.parentElement.id;
+      let idLink = event.target.parentElement.id;
+      
       if (idLink) {
-        const loadFile = injectLinkData(idLink);
-        $(".rightContainer")
-          .hide()
-          .load(loadFile, function () {
-            $(this).fadeIn(600);
-            PrependElement(backElement);
-            AppendElement(backElement);
-            $(".line").css("cursor", "pointer");
 
-          });
+        LoadRightContainer(idLink);
          
       }
     });
@@ -88,22 +121,10 @@ let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-b
 
   function AboutInfo(){
     $("#about").click( function (event) {
-      const idLink = event.target.id;
+      let idLink = event.target.id;
       if (idLink) {
-        const loadFile = injectLinkData(idLink);
-        $(".rightContainer")
-          .hide()
-          .load(loadFile, function () {
-            $(this).fadeIn(600);
-            PrependElement(backElement);
-            AppendElement(backElement);
-            $(".line").css("cursor", "pointer");
-          });
+      LoadRightContainer(idLink);
       }
-
-
-
-
 
     });
   }
@@ -137,7 +158,21 @@ let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-b
     return dataMapping[key] || dataMapping["default"];
   }
 
+  window.addEventListener("popstate", function (event) {
+    const state = event.state;
+    if (state != null){
 
+     if (state.PageId != "landing") {
+       LoadRightContainer(state.PageId);
+
+    } else {
+      LoadPageContent(landingLink);  // Load the landing page if no specific state is present
+
+      
+     }
+  
+    } 
+  });
 
   let currentIndex = localStorage.getItem("carouselIndex") || 0;
 
@@ -174,9 +209,7 @@ let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-b
     var section = document.querySelector(".rightLanding");
     var slides = section.querySelectorAll("div");
     const carouselPattern = MakePattern(slides,visibleItemsPattern);
-   // console.log(visibleItemsPattern);
-   //console.log(carouselPattern);
-    //const visibleItems = visibleItemsPattern.length;
+  
 
     let modifiedPattern = carouselPattern.slice()
   
@@ -190,7 +223,7 @@ let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-b
 
 
           shiftArrayRight(modifiedPattern);
-          //console.log(carouselPattern);
+    
 
         currentIndex++;
 
@@ -231,7 +264,6 @@ let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-b
       // // section.addEventListener("touch", nextSlide);
       // section.addEventListener("touchmove", nextSlide);
       // timer = window.setInterval(nextSlide, 4500);
-
 
     }
 
