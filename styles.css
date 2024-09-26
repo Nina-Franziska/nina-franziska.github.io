@@ -146,6 +146,11 @@ section.container {
   height: 85vh;
 }
 
+section.rightContainer {
+  padding-bottom: 2%;
+
+
+}
 section.left p.vision {
   font-size: 1.25rem;
   text-align: justify;
@@ -340,6 +345,7 @@ figcaption {
   @media only screen and (max-width: 600px) {
     section.rightContainer {
       grid-column-start: 1;
+      padding-bottom: 5%;
     
     
     }
