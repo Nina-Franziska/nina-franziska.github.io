@@ -72,6 +72,7 @@ function isTouchDevice() {
 
 let backElement = "<a href ='javascript:void(0)' class = 'back'><h3 class = 'cormorant-garamond-bold' >BACK</h3></a>"
 
+
 function LoadRightContainer(pageId){
 
   const loadFile = injectLinkData(pageId);
@@ -107,7 +108,10 @@ function LoadRightContainer(pageId){
 
   function PrependElement(element){
 
+   
     $(".rightProjectInfo").prepend(element);
+    // $(".rightProjectInfo").children(".back").css("padding-bottom", "10%");
+
 
 
   }
