@@ -193,6 +193,13 @@ function LoadRightContainer(pageId){
     return arr;
   }
 
+  function shiftArrayLeft(arr) {
+    if (arr.length === 0) return arr;
+    const firstElement = arr.shift();  // Remove the first element of the array
+    arr.push(firstElement);  // Add the removed element to the end of the array
+    return arr;
+  }
+
   function MakePattern(slideArr, visibleArr){
 
     if (slideArr.length === 0) return visibleArr;
@@ -251,16 +258,13 @@ function LoadRightContainer(pageId){
     };
 
     let prevSlide = () => {
-      if(currentIndex > 0 ){
-
-          shiftArrayRight(modifiedPattern);
-    
-
+      if (currentIndex > 0) {
+        shiftArrayLeft(modifiedPattern);  // You can write a `shiftArrayLeft` function to reverse the order
         currentIndex--;
 
-      } else{
-         modifiedPattern = carouselPattern.slice();
-         currentIndex = 0;
+      } else {
+        currentIndex = slides.length - 1;
+        modifiedPattern = carouselPattern.slice();
       }
 
       
@@ -286,10 +290,10 @@ function LoadRightContainer(pageId){
         endX = e.changedTouches[0].clientX;  // Get the final touch position (X-axis)
   
         // Determine the swipe direction (left or right)
-        if (startX > endX + 50) {
+        if (startX > endX + 25) {
           // Left swipe (next slide)
           nextSlide();
-        } else if (startX < endX - 50) {
+        } else if (startX < endX - 25) {
           // Right swipe (previous slide)
           prevSlide();  // You can implement a `prevSlide` function if needed
         }
