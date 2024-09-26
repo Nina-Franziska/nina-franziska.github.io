@@ -220,11 +220,11 @@ function LoadRightContainer(pageId){
 
 
     let timer;
+    let startX = 0;
+    let endX = 0;
 
     let nextSlide = () => {
       if(currentIndex < slides.length-4){
-
-
 
           shiftArrayRight(modifiedPattern);
     
@@ -237,9 +237,6 @@ function LoadRightContainer(pageId){
       }
 
       
-
-      
-
       patternMapped = modifiedPattern
         .map((p) => {
           return `${p}fr`;
@@ -253,23 +250,79 @@ function LoadRightContainer(pageId){
 
     };
 
-    if (section != null) {
-      timer = window.setInterval(nextSlide, 4500);
-      if (isTouchDevice()) {
-        // Disable click events and enable touch events for carousel
-        section.addEventListener("touchstart", nextSlide);
-       // section.removeEventListener("click", nextSlide); // Optional: Remove click if needed
-      } else {
-        // Enable click events for non-touch devices
-        section.addEventListener("click", nextSlide);
+    let prevSlide = () => {
+      if(currentIndex > 0 ){
+
+          shiftArrayRight(modifiedPattern);
+    
+
+        currentIndex--;
+
+      } else{
+         modifiedPattern = carouselPattern.slice();
+         currentIndex = 0;
       }
 
-      // section.addEventListener("click", nextSlide);
-      // // section.addEventListener("touch", nextSlide);
-      // section.addEventListener("touchmove", nextSlide);
-      // timer = window.setInterval(nextSlide, 4500);
+      
+      patternMapped = modifiedPattern
+        .map((p) => {
+          return `${p}fr`;
+        })
+        .join(" ");
+
+
+
+      clearInterval(timer);
+      section.style.gridTemplateColumns = patternMapped;
+
+    };
+
+    if (isTouchDevice()) {
+      section.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX;  // Get the initial touch position (X-axis)
+      });
+  
+      section.addEventListener("touchend", function (e) {
+        endX = e.changedTouches[0].clientX;  // Get the final touch position (X-axis)
+  
+        // Determine the swipe direction (left or right)
+        if (startX > endX + 50) {
+          // Left swipe (next slide)
+          nextSlide();
+        } else if (startX < endX - 50) {
+          // Right swipe (previous slide)
+          prevSlide();  // You can implement a `prevSlide` function if needed
+        }
+      });
+    }
+
+  if (section != null) {
+      timer = window.setInterval(nextSlide, 4500);
+      if (!isTouchDevice()) {
+        section.addEventListener("click", nextSlide);
+
+      } 
 
     }
+
+
+    // if (section != null) {
+    //   timer = window.setInterval(nextSlide, 4500);
+    //   if (isTouchDevice()) {
+    //     // Disable click events and enable touch events for carousel
+    //     section.addEventListener("touchstart", nextSlide);
+    //    // section.removeEventListener("click", nextSlide); // Optional: Remove click if needed
+    //   } else {
+    //     // Enable click events for non-touch devices
+    //     section.addEventListener("click", nextSlide);
+    //   }
+
+    //   // section.addEventListener("click", nextSlide);
+    //   // // section.addEventListener("touch", nextSlide);
+    //   // section.addEventListener("touchmove", nextSlide);
+    //   // timer = window.setInterval(nextSlide, 4500);
+
+    // }
 
 
   }

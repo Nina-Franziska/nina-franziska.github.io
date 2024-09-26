@@ -1,4 +1,4 @@
-    
+<section class="rightProjectInfo">
 <div>
     <h1 class="cormorant-garamond-light projectInfoHeader">
     Nina-Franziska Christiansen
@@ -20,7 +20,7 @@
     Her VR works arised from her struggles with chronic pain as the way her body has come to release stress, leading her on the journey of researching how recent studies on how the neuroplasticity of psilocybin therapy aids people with treatment-resistant depression.
     This began her journey of creating XR experiences that can have similar effects on the brain, releasing bodily tension while becoming a stepping stone for change in subconscious habitual behaviour. <br> <br>
 
-    Simoultaneously, Nina-Franziska co-founded <i><a href = "https://www.instagram.com/uberort.studio/">Uberørt</a></i> with fellow creative technologist and long time collaborator Louise Lessél, and is now creating the future of concert experiences, working with prominent musicians such as Sharin Foo, Louise Foo, Lisbet Fritze and Kirstine Stubbe Teglbjærg.
+    Simoultaneously, Nina-Franziska co-founded <i><a href = "https://www.instagram.com/uberort.studio/">Uberørt</a></i> with fellow creative technologist and long time collaborator <a href= "https://www.louiselessel.com/">Louise Lessél</a>, and is now creating the future of concert experiences, working with prominent musicians such as Sharin Foo, Louise Foo, Lisbet Fritze and Kirstine Stubbe Teglbjærg.
   </h2>
 
   <p>   <b>Technologies and Softwares</b> <br />
@@ -58,3 +58,4 @@
   </p>
 </b> <br />
 </div>
+</section>    
