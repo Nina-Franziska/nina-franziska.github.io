@@ -31,6 +31,13 @@
   font-style: normal;
 }
 
+.cormorant-garamond-bold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+
+  /* font-style: italic; */
+}
+
 .dm-serif text-regular {
   font-family: "DM Serif Text", serif;
   font-weight: 400;
@@ -100,6 +107,13 @@ h2 {
   font-size: 1.25vmax;
 }
 
+a > h3 {
+
+  text-underline-offset: 2px;
+  text-decoration: underline;
+  
+}
+
 p {
   font-weight: 300;
 }
@@ -147,7 +161,7 @@ section.container {
 }
 
 section.rightContainer {
-  padding-bottom: 2%;
+  padding-bottom: 9%;
 
 
 }
@@ -171,6 +185,7 @@ footer {
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
   align-items: end;
+  background-color: white;
 }
 
 footer div a {
@@ -345,7 +360,7 @@ figcaption {
   @media only screen and (max-width: 600px) {
     section.rightContainer {
       grid-column-start: 1;
-      padding-bottom: 5%;
+      padding-bottom: 10%;
     
     
     }

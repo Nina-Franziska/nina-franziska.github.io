@@ -26,20 +26,18 @@ function isTouchDevice() {
 
   // Logo and line click handler
   $("#logo, .line").on("click", function () {
-    console.log("klik"),
+    //console.log("klik"),
     loadPageContent(landingLink);
     $(".line").css("cursor", "default");
   });
 
-  $(document).on("click", "#back", function () {
-    console.log("klik"),
+  $(document).on("click", ".back", function () {
     loadPageContent(landingLink);
     $(".line").css("cursor", "default");
   });
 
   // Load content and initialize ProjectInfo and Carousel
   function loadPageContent(link) {
-    //$("#back").remove();
     $(".rightContainer")
       .hide()
       .load(link, function () {
@@ -53,6 +51,8 @@ function isTouchDevice() {
       // <h3 class = "cormorant-garamond-light one-liner">BACK</h3>
   }
 
+let backElement = "<a href ='#' class = 'back'><h3 class = 'cormorant-garamond-bold' >BACK</h3></a>"
+
   function ProjectInfo() {
     $(".rightLanding").on("click", function (event) {
       const idLink = event.target.parentElement.id;
@@ -62,7 +62,8 @@ function isTouchDevice() {
           .hide()
           .load(loadFile, function () {
             $(this).fadeIn(600);
-            PrependElement("<a href ='#' id = 'back'><h3 class = 'cormorant-garamond-light' >BACK</h3></a>");
+            PrependElement(backElement);
+            AppendElement(backElement);
             $(".line").css("cursor", "pointer");
 
           });
@@ -78,6 +79,13 @@ function isTouchDevice() {
 
   }
 
+  function AppendElement(element){
+
+    $(".rightContainer").append(element);
+
+
+  }
+
   function AboutInfo(){
     $("#about").click( function (event) {
       const idLink = event.target.id;
@@ -87,7 +95,8 @@ function isTouchDevice() {
           .hide()
           .load(loadFile, function () {
             $(this).fadeIn(600);
-            PrependElement("<a href =#' id = 'back'>BACK</a>");
+            PrependElement(backElement);
+            AppendElement(backElement);
             $(".line").css("cursor", "pointer");
           });
       }
