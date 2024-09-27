@@ -86,7 +86,7 @@ function LoadRightContainer(pageId){
     .hide()
     .load(loadFile, function () {
       $(this).fadeIn(600);
-      PrependElement(backElement);
+     // PrependElement(backElement);
       AppendElement(backElement);
       $(".line").css("cursor", "pointer");
       // Push the new state to the browser's history
