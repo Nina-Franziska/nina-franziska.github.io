@@ -228,6 +228,7 @@ function LoadRightContainer(pageId){
 
     let timer;
     let startX = 0;
+    let startY = 0;
     let endX = 0;
 
     let nextSlide = () => {
@@ -283,8 +284,19 @@ function LoadRightContainer(pageId){
 
     if (isTouchDevice()) {
       section.addEventListener("touchstart", function (e) {
-        startX = e.touches[0].clientX;  // Get the initial touch position (X-axis)
-      });
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;  // Get the initial touch position (X-axis)
+      }, { passive: false });
+
+      document.querySelector(".rightLanding").addEventListener("touchmove", function(event) {
+        const diffX = e.touches[0].clientX - startX;
+        const diffY = e.touches[0].clientY - startY;
+    
+        // If the swipe is more horizontal than vertical, prevent default behavior (scrolling)
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            event.preventDefault();
+        }
+    }, { passive: false });
   
       section.addEventListener("touchend", function (e) {
         endX = e.changedTouches[0].clientX;  // Get the final touch position (X-axis)
@@ -297,6 +309,9 @@ function LoadRightContainer(pageId){
           // Right swipe (previous slide)
           prevSlide();  // You can implement a `prevSlide` function if needed
         }
+
+  
+
       });
     }
 
