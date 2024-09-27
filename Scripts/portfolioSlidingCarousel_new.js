@@ -30,6 +30,7 @@ function isTouchDevice() {
     event.preventDefault(); 
     //preventDefault()
     LoadPageContent(landingLink);
+     currentIndex = 0;
     $(".line").css("cursor", "default");
   });
 
@@ -37,14 +38,18 @@ function isTouchDevice() {
     event.preventDefault();
     //preventDefault()
     LoadPageContent(landingLink);
+    currentIndex = 0;
     $(".line").css("cursor", "default");
   
   });
 
   // Load content and initialize ProjectInfo and Carousel
 
+  let currentIndex = 0;
 
   function LoadPageContent(link) {
+
+
 
     let pageId = "landing";
 
@@ -178,7 +183,7 @@ function LoadRightContainer(pageId){
     } 
   });
 
-  let currentIndex = localStorage.getItem("carouselIndex") || 0;
+  currentIndex = localStorage.getItem("carouselIndex") || 0;
 
   function shiftArrayRight(arr) {
     if (arr.length === 0) return arr; // If the array is empty, return it as is.
@@ -194,9 +199,22 @@ function LoadRightContainer(pageId){
   }
 
   function shiftArrayLeft(arr) {
+
     if (arr.length === 0) return arr;
-    const firstElement = arr.shift();  // Remove the first element of the array
-    arr.push(firstElement);  // Add the removed element to the end of the array
+    if (currentIndex == 0){
+      for (let index = 0; index < 6; index++) {
+        console.log(arr);
+        const firstElement = arr.shift();  // Remove the first element of the array
+      arr.push(firstElement);
+        
+      }
+      currentIndex = currentIndex -4;
+
+    } else {
+      const firstElement = arr.shift();  // Remove the first element of the array
+      arr.push(firstElement);  // Add the removed element to the end of the array
+    }
+   
     return arr;
   }
 
@@ -212,6 +230,9 @@ function LoadRightContainer(pageId){
     return carouselArr;
 
   }
+
+
+
   function Carousel() {
 
     let visibleItemsPattern = [4, 6, 3, 2];
@@ -223,6 +244,7 @@ function LoadRightContainer(pageId){
   
 
     let modifiedPattern = carouselPattern.slice()
+
   
 
 
@@ -255,17 +277,19 @@ function LoadRightContainer(pageId){
 
       clearInterval(timer);
       section.style.gridTemplateColumns = patternMapped;
+      console.log("pattern: "+ patternMapped + " current index: " + currentIndex);
+
 
     };
 
     let prevSlide = () => {
-      if (currentIndex > 0) {
+      if (currentIndex > -slides.length) {
         shiftArrayLeft(modifiedPattern);  // You can write a `shiftArrayLeft` function to reverse the order
         currentIndex--;
 
       } else {
-        currentIndex = slides.length - 1;
         modifiedPattern = carouselPattern.slice();
+        currentIndex = 0;
       }
 
       
@@ -279,6 +303,9 @@ function LoadRightContainer(pageId){
 
       clearInterval(timer);
       section.style.gridTemplateColumns = patternMapped;
+      console.log("pattern: "+ modifiedPattern + " current index: " + currentIndex);
+      
+      
 
     };
 
