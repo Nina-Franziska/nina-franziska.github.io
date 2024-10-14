@@ -67,7 +67,8 @@
 
 html,
 body {
-  font-size: 0.85vmax;
+  /* font-size: 0.85vmax; */
+  font-size: 0.85rem;
   font-family: "Jost", sans-serif;
   font-weight: 400;
 
@@ -89,7 +90,7 @@ header {
 }
 
 h1 {
-  font-size: 2.25vmax;
+  font-size: 2.25rem;
   font-weight: 300;
   line-height: 2.5rem;
 }
@@ -105,7 +106,7 @@ h1#logo {
 
 h2 {
   padding-bottom: 2rem;
-  font-size: 1.25vmax;
+  font-size: 1.25rem;
 }
 
 a > h3 {
