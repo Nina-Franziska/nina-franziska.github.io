@@ -362,10 +362,10 @@ figcaption {
 
 
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (width <= 600px) and (orientation: portrait) {
       .rightContainer {
       grid-column-start: 1;
-      padding-bottom: 10%;
+      padding-bottom: 15%;
 
       
 
