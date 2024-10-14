@@ -380,6 +380,16 @@ figcaption {
     section.rightLanding {
       padding-bottom: 10vh;
     }
+
+    iframe {
+
+      width: 90vw;
+
+    }
+
+    /* div:has(> iframe) { 
+      padding: 100%
+     } */
 /* 
     footer{
 
