@@ -393,12 +393,13 @@ figcaption {
     iframe {
 
       width: 90vw!important;
+    
 
     }
 
-    /* div:has(> iframe) { 
-      padding: 100%
-     } */
+    div:has(> iframe) { 
+      margin: 0%!important;
+     }
 /* 
     footer{
 
