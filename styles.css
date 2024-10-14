@@ -267,13 +267,13 @@ section.rightProjectInfo .largeFinalSquarePhotos img {
   object-fit: cover;
 }
 
-.largeInitialPhoto iframe {
+/* .largeInitialPhoto iframe {
   max-width: 50%;
   aspect-ratio: 3/4;
   object-fit: cover;
   height: 60vh;
   width: 30vw;
-}
+} */
 
 div.projectInfoFigures img {
   max-width: 100%;
@@ -359,7 +359,15 @@ figcaption {
     text-align: right;
   }
 
+/* 
+  iframe {
 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 50vw; 
+    height: 100%
+  } */
 
 
   @media only screen and (width <= 600px) and (orientation: portrait) {
